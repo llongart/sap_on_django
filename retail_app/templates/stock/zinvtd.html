@@ -1,0 +1,31 @@
+{% extends "layouts/layout.html" %}
+
+{% block title %} 
+    {{title}} 
+{% endblock %}
+
+{% block content %}
+    <h1>{{subtitle}}</h1>
+    <hr>
+
+    <div class="frame">
+        <form action="" method="post">
+            {% csrf_token %}
+
+            {{form.as_p}}
+            
+            <input type="submit" value="Ejecutar">
+        </form>
+    </div>
+
+
+{% comment "" %}
+    {% if form.errors %}
+        {% for error in form.errors %}
+            <strong>
+                {{error}}
+            </strong>
+        {% endfor %}
+    {% endif %}
+{% endcomment %}
+{% endblock %}

@@ -1,0 +1,80 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            {% block title %} 
+
+            {% endblock %}
+        </title>
+
+        <link rel="stylesheet" type="text/css" href="{% static 'css/datatables.css' %}" >
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"/>
+    </head>
+
+    <body>
+        <header>
+            <div id="logo">
+                <img src="{% static 'images/trklogo.png' %}"/>
+                <h1>Reportes SAP</h1>
+            </div>
+        </header>
+
+        <nav id="nav">
+            <ul>
+                <li>
+                    <a href="{% url 'index' %}">Home</a>
+                </li>
+                <li>
+                    <a href="#">Retail</a>
+                    <ul>
+                        <li class="first">
+                            <a href="#">Listado de artículos</a>
+                        </li>
+                        <li>
+                            <a href="#">Listado de precios</a>
+                        </li>
+                        <li class="last">
+                            <a href="{% url 'zinvtd' %}">Stock de artículos</a>
+                        </li>                        
+                    </ul>
+                </li>                 
+                <li>
+                    <a href="#">Finanzas</a>
+                </li>
+                <li>
+                    <a href="#">Construcción</a>
+                </li>                            
+                <li>
+                    <a href="{% url 'admin' %}">Admin</a>
+                </li>
+
+                <li>
+                    <a href="#">Login</a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <div id="content">
+            <div class="box">
+                {% block content %}
+                    <h1>Página prueba</h1>
+                {% endblock %}
+            </div>
+           
+        </div>
+        
+
+        <footer class="footer">
+            Reportes SAP | TRK &copy; by: Luis Longart - {% now "d.m.Y" %}
+        </footer>   
+
+        <script src="{% static 'js/jquery-3.7.1.min.js' %}"></script>
+        <script src="{% static 'js/datatables.min.js' %}"></script>
+        <script src="{% static 'js/index.js' %}"></script>
+    </body>
+</html>

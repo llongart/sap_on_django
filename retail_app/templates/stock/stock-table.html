@@ -1,0 +1,30 @@
+{% extends "layouts/layout.html" %}
+
+{% block title %} 
+    {{title}} 
+{% endblock %}
+
+{% block content %}
+    <h1>{{subtitle}}</h1>
+    <hr>
+
+    <table id="myTable" class="display">
+        <thead>
+            <tr>
+                <th>Artículo</th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2079324</td>
+                <td>Cama de 4 patas</td>
+            </tr>
+            <tr>
+                <td>2079325</td>
+                <td>Pantalón para dama</td>
+            </tr>
+        </tbody>
+    </table> 
+
+{% endblock %}

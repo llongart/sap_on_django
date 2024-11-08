@@ -1,0 +1,242 @@
+/* Estilos generales */
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif, Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+hr{
+    color: #007CC0;
+    opacity: 100%;
+}
+
+body{
+    background-color: #F2F2F2;
+}
+
+/* Estilos cabecera */
+header{
+    width: 1250px;
+    height: 140px;
+    background-color: #000000;
+    margin: auto; /* Hace que el header quede en el centro */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    box-shadow: 0px 0px 10px #B31617;
+}
+
+#logo{
+    width: 40%;
+    height: 140px;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+#logo img{
+    display: block; /* Para poder manipularlo */
+    width: 200px;
+    float: left;
+    margin-top: 10px;
+    border: none;
+}
+
+#logo h1{
+    display: block;
+    float:left;
+    margin-top: 40px;
+    margin-left: 20px;
+    letter-spacing: 2px;
+    font-weight: 100;
+    color: #cfcfcf;
+}
+
+/* Estilo de la barra de navegación */
+#nav{
+    width: 1250px;
+    height: 40px;
+    background-color: #B31617;
+    border: 1px solid #B31617;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 50px;
+    margin: 0 auto;
+    margin-top: -20px;
+    box-shadow: 0px 0px 10px #B31617;
+    font-size: 15px;
+}
+
+#nav > ul{
+    list-style: none;
+    text-decoration: none;
+}
+
+#nav > ul > li{
+    margin-top: 2px;
+    line-height: 35px;
+    float: left;
+}
+
+#nav > ul > li > a{
+    display: block;
+    padding-left: 20px;   
+    padding-right: 20px;
+    color: #cfcfcf;
+}
+
+#nav > ul > li > a:hover{ 
+    background: #f72e2e;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 50px;
+    color: #000;
+    border: 0px solid #B31617;
+    box-shadow: 0px 0px 20px #B31617;
+    transition: 300ms all;
+}
+
+#nav > ul > li > ul{
+    display: none; /* Esto hace que los elementos de la ul solo se vean en el submenu */
+    position: absolute;
+    padding-left: 0px;
+    padding-top: 2px;
+    color: #cfcfcf;
+    text-align: left;
+    width: auto;
+    transition: 300ms all;
+    opacity: 100%;
+}
+
+#nav > ul > li:hover > ul{
+    display: block;
+    color: #cfcfcf;
+    margin: 0px;
+    list-style: none;
+}
+
+#nav > ul > li:hover > ul > li{
+    background: #B31617;
+    border-bottom: 1px solid #2e2828;
+    padding: 8px;
+    line-height: 25px;
+    font-size: 15px;
+    opacity: 100%;
+}
+
+#nav > ul > li:hover > ul > li > a{
+    color: #cfcfcf;
+}
+
+#nav > ul > li:hover > ul > li:hover{
+    background-color: #f72e2e;
+    transition: 300ms all;    
+}
+
+#nav > ul > li:hover > ul > li:hover > a{
+    display: block;
+    color: #000;
+}
+
+.first{
+    border-top-right-radius: 20px;
+}
+
+.last{
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Estilo del contenido central */ 
+#content{
+    width: 1250px;
+    min-height: 930px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.content{
+    line-height: 25px;
+}
+
+.box{
+    background: #F2F2F2;
+    width: 99%;
+    min-height: 930px;
+    padding: 20px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+.box form{
+    /* width: 100%; */
+    padding-left: 20px;
+}
+
+/* .frame{
+    display: block;
+    border-radius: 5px;
+    padding-bottom: 10px;
+} */
+
+.box form input,
+.box form label{
+    display: block;
+    padding: 5px;
+    padding-left: 2px;
+}
+
+.box form input[type="text"]{
+    height: 30px;
+    width: 23%;
+    margin-bottom: 10px;
+}
+
+.box form input[type="submit"],
+.box form input[type="button"],
+.box form button{
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    background: #B31617; /*#0e7c0e;*/
+    border: 1px solid #f72e2e;
+    border-radius: 5px;
+    color: #cfcfcf;
+    transition: 300ms all;
+    box-shadow: 0px 0px 10px #f72e2e;
+    margin-left: 200px;
+}
+
+.box form input[type="submit"]:hover,
+.box form input[type="button"]:hover,
+.box form button:hover{
+    background: #f72e2e;
+    border-radius: 5px;
+    color: #000000;
+}
+
+/* Estilo del pie de página */
+.footer{
+    width: 1250px;
+    background-color: #000000;
+    color: #cfcfcf;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;    
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;    
+    box-shadow: 0px 0px 10px #B31617;
+}
+
+
+/* Alineación a la izquierda para la tabla */
+.text-left{
+    float: left;
+}
