@@ -1,5 +1,3 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -10,14 +8,15 @@
 
             {% endblock %}
         </title>
+  
+        {% include "assets-templates/css-links.html" %}
 
-        <link rel="stylesheet" type="text/css" href="{% static 'css/datatables.css' %}" >
-        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"/>
     </head>
 
     <body>
         <header>
             <div id="logo">
+                {% load static %}
                 <img src="{% static 'images/trklogo.png' %}"/>
                 <h1>Reportes SAP</h1>
             </div>
@@ -57,24 +56,24 @@
                 </li>
 
             </ul>
+            
+            <button id="id-theme-toggler" class="dark-toggler" aria-label="Toggle color mode" title="Toggle color mode" data-bs-theme-toggle>
+                <div class="toggler-icon"></div>
+            </button>             
         </nav>
 
         <div id="content">
             <div class="box">
                 {% block content %}
-                    <h1>Página prueba</h1>
-                {% endblock %}
+                    <h1>Contenido original</h1>
+                {% endblock %}        
             </div>
-           
         </div>
-        
 
         <footer class="footer">
             Reportes SAP | TRK &copy; by: Luis Longart - {% now "d.m.Y" %}
         </footer>   
 
-        <script src="{% static 'js/jquery-3.7.1.min.js' %}"></script>
-        <script src="{% static 'js/datatables.min.js' %}"></script>
-        <script src="{% static 'js/index.js' %}"></script>
+        {% include "assets-templates/js-srcs.html" %}
     </body>
 </html>

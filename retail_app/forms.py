@@ -1,3 +1,4 @@
+from tabnanny import verbose
 from django import forms
 from django.core import validators
 
@@ -15,14 +16,13 @@ class ZinvtdForm(forms.Form):
         ),
         label = 'N° Artículo',
         validators = [
-            validators.MinLengthValidator(7, 'Número de artículo demasiado corto'),
-            validators.MaxLengthValidator(18, 'Número de artículo demasiado largo'),
             validators.RegexValidator('^[0-9]*$', 'Solo es posible introducir caracteres númericos', 'bad_article'),
         ]
     )
 
     article_group = forms.CharField(
         max_length = 10,
+        min_length = 5,
         required = False,
         widget = forms.TextInput(
             attrs = {
@@ -32,8 +32,22 @@ class ZinvtdForm(forms.Form):
         ),
         label = 'Grupo de artículos',
         validators = [
-            validators.MinLengthValidator(7, 'Número de artículo demasiado corto'),
-            validators.MaxLengthValidator(18, 'Número de artículo demasiado largo'),
             validators.RegexValidator('^[A-Za-z0-9]*$', 'No es posible introducir caracteres especiales', 'bad_article_group'),
         ]
     )
+
+class MatchCodeForm(forms.Form):
+
+    material = forms.CharField(
+        required=False,
+        widget = forms.Textarea(),        
+        validators=[
+            validators.MaxLengthValidator(20, 'Contenido demasiado largo')
+        ],
+        label="Artículos"
+    )
+
+    material.widget.attrs.update({
+        'class': 'articles_matchcode_form',
+        'placeholder': 'Artículos'
+    })

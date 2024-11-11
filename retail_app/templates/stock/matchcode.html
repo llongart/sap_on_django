@@ -1,0 +1,21 @@
+<!-- Modal -->
+<form action="" method="post">
+  {% csrf_token %} 
+  <div id="matchcode" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="matchcodeModalCenterTitle" aria-bs-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="matchcodeModalCenterTitle">Matchcode</h5>                  
+          <button id="closeButton" type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"/>
+        </div>
+        <div class="modal-body">
+            {% comment %} {{ matchcode.as_p }}  {% endcomment %}
+        </div>          
+        <div class="modal-footer">
+          {% comment %} <div class="spinner-border text-danger" role="status" id="spinner"></div> {% endcomment %}
+          <button id="guardar" type="button" class="btn btn-primary">Guardar</button>        
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

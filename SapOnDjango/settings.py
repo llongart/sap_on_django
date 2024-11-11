@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_bootstrap_icons',
+    'bootstrap_modal_forms',
+    'crispy_forms',
     'main_app',
     'retail_app',
 ]
@@ -118,6 +121,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# Con estas dos lineas se puede cambiar la configuración para que 
+# la carpeta static sea global y la pueda usar otra app en el proyecto.
+# Por defecto no vienen en las settings.py
+STATIC_ROOT = BASE_DIR / ''
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
