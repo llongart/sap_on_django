@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'SapOnDjango.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sap_on_web',
+        'NAME': 'sapweb',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',
